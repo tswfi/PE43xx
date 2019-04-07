@@ -25,6 +25,7 @@ void ArduinoPE43xx::begin() {
             _step = 1;
             break;
         default:
+            #warning type not certain, going with defaults, step=1 max=30
             _step = 1;
             _max = 30;
             break;
@@ -36,7 +37,7 @@ void ArduinoPE43xx::begin() {
 
 bool ArduinoPE43xx::setLevel(float level) {
     // bounds check
-    if(level < 0 || level > getMax() ) {
+    if(level <= 0 || level >= getMax() ) {
         return false;
     }
 
