@@ -37,7 +37,7 @@ void ArduinoPE43xx::begin() {
 
 bool ArduinoPE43xx::setLevel(float level) {
     // bounds check
-    if(level <= 0 || level >= getMax() ) {
+    if(level < 0 || level > getMax() ) {
         return false;
     }
 
