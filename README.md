@@ -1,6 +1,6 @@
-# ArduinoPE4302 Library
+# PE43xx Library
 
-Simple library for PE4302 Digital Step Attenuator. Should work with all PE43xx family but I don't have those for testing.
+Simple library for PE43xx Digital Step Attenuator family of chips. Should work with all PE43xx family but I don't have those for testing. Currently only tested with PE4302.
 
 https://www.psemi.com/pdf/datasheets/pe4302ds.pdf
 https://www.psemi.com/pdf/datasheets/pe4312ds.pdf
@@ -10,10 +10,10 @@ https://www.psemi.com/pdf/datasheets/pe4306ds.pdf
 # Usage
 
 ```c++
-<include ArduinoPE43xx.h>
+<include PE43xx.h>
 
 // Initialize our attenuator, pins are LE, DATA, CLOCK, Type. Currently only PE4302 is tested
-ArduinoPE43xx attenuator(A4,A5,A6,PE4302)
+PE43xx attenuator(A4,A5,A6,PE4302)
 
 // just for the demo time keeping
 unsigned long previousMillis = 0;

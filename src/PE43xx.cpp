@@ -1,13 +1,13 @@
-#include "ArduinoPE43xx.h"
+#include "PE43xx.h"
 
-ArduinoPE43xx::ArduinoPE43xx(uint8_t pin_le, uint8_t pin_clock, uint8_t pin_data, uint8_t type) {
+PE43xx::PE43xx(uint8_t pin_le, uint8_t pin_clock, uint8_t pin_data, uint8_t type) {
     _pin_le = pin_le;
     _pin_clock = pin_clock;
     _pin_data = pin_data;
     _type = type;
 }
 
-void ArduinoPE43xx::begin() {
+void PE43xx::begin() {
     // set pins
     pinMode(_pin_le, OUTPUT);
     pinMode(_pin_clock, OUTPUT);
@@ -35,7 +35,7 @@ void ArduinoPE43xx::begin() {
     setLevel(0);
 }
 
-bool ArduinoPE43xx::setLevel(float level) {
+bool PE43xx::setLevel(float level) {
     // bounds check
     if(level < 0 || level > getMax() ) {
         return false;
@@ -47,7 +47,7 @@ bool ArduinoPE43xx::setLevel(float level) {
     return true;
 }
 
-void ArduinoPE43xx::_writeLevel() {
+void PE43xx::_writeLevel() {
 
     // PE4302 and PE4312 wants something like this
     //
@@ -107,14 +107,14 @@ void ArduinoPE43xx::_writeLevel() {
 }
 
 // getters
-float ArduinoPE43xx::getLevel() {
+float PE43xx::getLevel() {
     return _level;
 }
 
-float ArduinoPE43xx::getMax() {
+float PE43xx::getMax() {
     return _max;
 }
 
-float ArduinoPE43xx::getStep() {
+float PE43xx::getStep() {
     return _step;
 }

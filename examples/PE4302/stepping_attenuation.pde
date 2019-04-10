@@ -3,10 +3,10 @@
 
 // Simple example that steps attenuation by 0.5db every 500ms
 
-#include <ArduinoPE43xx.h>
+#include <PE43xx.h>
 
-// Initialize our attenuator, pins are LE, DATA, CLOCK, Type. Currently only PE4302 is tested
-ArduinoPE43xx attenuator(A4,A5,A6,PE4302);
+// Initialize instance for our attenuator. Pins are LE, DATA, CLOCK, Type. Currently only PE4302 is tested
+PE43xx attenuator(A4,A5,A6,PE4302);
 
 // for calculations in the demo
 float level = 0;
@@ -26,8 +26,8 @@ void loop() {
     if (currentMillis - previousMillis >= interval) {
         previousMillis = currentMillis;
 
-        // different attenuator have different steps (usually either 1db or 0.5db)
-        // get the step from libabry (for now only supports PE4302 but this might change in the future)
+        // different attenuator chips have different steps (usually either 1db or 0.5db)
+        // get the step from libabry (for now only supports PE4302 and PE4312 but this might change in the future)
         level = level + attenuator.getStep();
 
         // different chips have different max values (usually 31db or 31.5db)

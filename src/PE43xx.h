@@ -1,5 +1,5 @@
-#ifndef ArduinoPE43xx_h
-#define ArduinoPE43xx_h
+#ifndef PE43xx_h
+#define PE43xx_h
 
 #if ARDUINO >= 100
   #include "Arduino.h"
@@ -15,10 +15,10 @@
 #define PE4306 06
 #define PE4312 12
 
-class ArduinoPE43xx
+class PE43xx
 {
   public:
-    ArduinoPE43xx(uint8_t pin_le, uint8_t pin_clock, uint8_t pin_data, uint8_t type);
+    PE43xx(uint8_t pin_le, uint8_t pin_clock, uint8_t pin_data, uint8_t type);
 
     void begin();
 
