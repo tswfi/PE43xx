@@ -1,5 +1,6 @@
 {
     "name": "PE43xx",
+    "version": "1.0.0",
     "keywords": "PE43xx, PE4302, PE4312",
     "description": "Arduino library for controlling PE43xx family of attenuators.",
     "authors":
